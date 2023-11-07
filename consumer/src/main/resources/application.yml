@@ -1,0 +1,18 @@
+spring:
+  kafka:
+    consumer:
+    # Specifies the name of the consumer group a Kafka consumer belongs to
+    group-id: topic-loggers
+    # Kafka server location. By accessing the localhost, we're acessing the
+    # kafka within the docker container running on port 9002
+    bootstrap-servers: localhost:9092
+
+server:
+  #Port where our producer application will be running
+  port: 8002
+
+kafka:
+  #Topic where we want to post
+  topic: custom-topic
+  #How many messages we want to reproduce whenever the HTTP endpoint gets called
+  messages: 10
